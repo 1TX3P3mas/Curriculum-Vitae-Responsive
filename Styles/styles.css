@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+
+  }
+  
+  body {
+    width: 100%;
+    font-family: lucida console;
+    background-color: #f0ffff;
+  }
+  
+  /* Estilo para el header */
+  .header {
+    grid-area: header;
+    text-align: center;
+    font-size: 31px;
+    letter-spacing: 8PX;
+  }
+  /* Estilo para titulo de los datos */
+   h2 {
+    color: #5f9ea0;
+    font-size: 27px;
+  }
+   
+   .p {
+    display: inline;
+   }
+  
+  /* Contenedor */
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header header header' 
+      'figure figure figure article article article'
+      'experience experience experience charge charge year'
+      'study study study study study study'
+      'footer footer footer footer footer footer';
+    gap: 15px;
+    justify-content: center;
+    margin: 0 5rem;
+  } 
+  
+  /* Estilo para la imagen de perfil */
+  .figure {
+    grid-area: figure;
+    text-align: center;
+     img {
+    display: inline-flex;   
+    border-radius: 999px;
+    width: 50%;
+  } 
+  }
+  
+  /* Estilo para el contenido datos*/
+  .article {
+    grid-area: article;
+    text-align: left;
+    place-self: center;
+  }
+
+  /* Estilo para los enlaces */
+  .links {
+    line-height: 50px;
+    text-decoration: none;
+    color: black; 
+  }
+   .links:hover {
+    text-decoration: solid;
+    font-size: 20px;
+  }
+
+  /* Estilo de la seccion experiencia */
+  .experience {
+    /* width: fit-content; */
+    grid-area: experience;
+    text-align: left;
+  
+  }
+
+ /* Estilo de la seccion cargo */
+ .charge {
+    grid-area: charge;
+    text-align: left;
+  }
+
+  /* Estilo de la seccion año */
+ .year {
+    grid-area: year;   
+    text-align: left;
+    
+  }
+
+  /* Estilo de la seccion formación */
+  .study {
+    grid-area: study;
+    text-align: center;
+  }
+
+  /* Estilo del footer */
+  .footer {
+    grid-area: footer;
+    padding: 5px;
+    text-align: left;
+  }
+  
+  /* Responsive  */
+
+  @media screen and (max-width: 600px) {
+    .grid-container  {
+      grid-template-areas: 
+        'header header header header header header' 
+        'figure figure figure figure figure figure' 
+        'article article article article article article'
+        'experience experience experience experience experience experience'
+        'charge charge charge charge charge charge'
+        'year year year year year yearn'
+        'study study study study study study'
+        'footer footer footer footer footer footer';
+    }
+  }
+
+  /* Estilo que esconde cargo y año cuando la pantalla reduce*/
+  @media screen and (max-width: 600px) {
+    .charge, .year {
+      display: none;
+    }
+    .p {
+      display: inline;
+    }
+  }
+  /* Estilo que cambia el tamaño del texto cuando la pantalla aumenta*/
+  @media only screen and (min-width: 600px) {
+  .header {
+    font-size: 31px;
+  }
+  .h2 {
+    font-size: 27px;
+  }
+  .p {
+    display: none;
+  }
+}
+
+/* Estilo que cambia el tamaño del texto cuando la pantalla reduce*/
+  @media only screen and (max-width: 600px) {
+  .header {
+    font-size: 16px;
+  }
+  .h2 {
+    font-size: 8px;
+  }
+}
